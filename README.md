@@ -87,21 +87,3 @@ PostgreSQL contains `users`, `parking_slots`, `vehicles`, and `parking_tickets`,
 
 JWT protects parking routes, bcrypt hashes passwords, Joi rejects unexpected or malformed input, and SQL statements are parameterized. MongoDB receives structured objects rather than user-built query operators. Authentication and parking writes are rate limited. Errors return status codes and safe messages without stack traces.
 
-## Environment variables
-
-Copy `server/.env.example` to `server/.env` and provide local values for `PORT`, `JWT_SECRET`, `DATABASE_URL`, `MONGODB_URI`, `REDIS_URL`, and `NODE_ENV`. Never commit `.env` or real credentials.
-
-## Local services
-
-PostgreSQL uses database `bellcorp_parking` on port `5432`; apply `database/postgres/schema.sql`. MongoDB runs on port `27017`; run `database/mongo/init.js` with `mongosh` when available. Redis runs on port `6379`. Docker Compose is available as an optional alternative in `docker-compose.yml`.
-
-## Testing checklist
-
-Exercise registration, login, invalid login, unauthorized access, validation failures, Bike/Car/Truck parking, duplicate active vehicles, full capacity, invalid and repeated exits, slot release, fare boundaries, history pagination, audit events, and concurrent requests with one remaining slot. The concurrency check must assert one allocation and one `Parking Full` response when only one slot remains. `DEMO_SCRIPT.md` contains the repeatable presentation flow.
-
-## Submission notes
-
-Screenshots should be captured from the running dashboard and attached to the final submission; no binary screenshots are committed by default. Known limitations are local service startup management and a single-process in-memory rate limiter; production deployment should use managed services and a shared limiter store. Future improvements include role-based operator access, automated migrations, stronger observability, and a CI test pipeline. `DESIGN.md` is the design document and `DEMO_SCRIPT.md` is the video demonstration guide.
-# Parking-lot
-# Parking-lot
-# Parking-lot
