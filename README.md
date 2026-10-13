@@ -104,3 +104,4 @@ Exercise registration, login, invalid login, unauthorized access, validation fai
 Screenshots should be captured from the running dashboard and attached to the final submission; no binary screenshots are committed by default. Known limitations are local service startup management and a single-process in-memory rate limiter; production deployment should use managed services and a shared limiter store. Future improvements include role-based operator access, automated migrations, stronger observability, and a CI test pipeline. `DESIGN.md` is the design document and `DEMO_SCRIPT.md` is the video demonstration guide.
 # Parking-lot
 # Parking-lot
+# Parking-lot
